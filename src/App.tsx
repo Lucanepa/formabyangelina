@@ -11,7 +11,7 @@ import {
   CardContent,
   CardFooter,
 } from '@/components/ui/card'
-import { Logo } from '@/components/Logo'
+import { LogoLockup } from '@/components/Logo'
 
 const sessions = [
   {
@@ -71,7 +71,7 @@ export default function App() {
       <header className="sticky top-0 z-20 border-b border-border/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
           <a href="#" aria-label="Forma by Angelina" className="flex items-center">
-            <Logo className="h-9 w-auto text-foreground" />
+            <LogoLockup className="h-12 w-auto text-foreground" />
           </a>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground sm:flex">
             <a href="#sessions" className="transition-colors hover:text-foreground">Sessions</a>
@@ -191,7 +191,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <Logo className="h-7 w-auto text-foreground" />
+          <LogoLockup className="h-16 w-auto text-foreground" />
           <span className="flex items-center gap-1.5"><MapPin className="size-3.5" /> Zürich · by appointment</span>
           <span>© {new Date().getFullYear()} Forma by Angelina</span>
         </div>
