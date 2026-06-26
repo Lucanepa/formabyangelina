@@ -5,3 +5,7 @@ dist-ssr
 .DS_Store
 .vite
 *.log
+ds-bundle/
+.ds-sync/
+.design-sync/.cache/
+.design-sync/learnings/
