@@ -33,7 +33,7 @@ Real copy is left as clearly-marked `TODO`s — fill these before launch:
 
 - **Strings** — `src/i18n/de.json` (primary) + `src/i18n/en.json`: hero tagline, service copy, Angelina's bio, contact details, and the **legal notice** (required for Stripe/TWINT).
 - **About photo** — drop in a real image of Angelina (the About section has a placeholder slot).
-- **Booking** — `src/config/booking.ts`: set the Cal.com `username`, confirm each event `slug`, and set the CHF price per service.
+- **Booking** — `src/config/booking.ts`: Cal.com `username` is set (`formabyangelina`); confirm each event `slug` matches the Cal.com event types and set the CHF price per service.
 
 Dates/times: always go through `formatDate` / `formatTime` in `src/lib/utils.ts` (de-CH, `dd.mm.yyyy` and 24h `HH:MM`). Colours: use the semantic token utilities only (e.g. `bg-primary`, `text-muted-foreground`) — never raw hex.
 

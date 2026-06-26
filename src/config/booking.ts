@@ -13,12 +13,12 @@ import {
  * changed in one place. The CHF prices are also the amounts you set on each
  * Cal.com event type's Stripe app (see README → "Payment setup").
  *
- * TODO(angelina): replace the placeholder Cal.com username and confirm each
- * event slug + price once the Cal.com account + event types exist.
+ * TODO(angelina): confirm each event slug + price once the Cal.com event
+ * types exist (the username is set).
  */
 export const calcom = {
-  /** Your cal.com handle, i.e. cal.com/<username>. TODO: set the real one. */
-  username: '[your-calcom-username]',
+  /** Cal.com handle → cal.com/formabyangelina */
+  username: 'formabyangelina',
   /** Cal embed layout. 'month_view' | 'week_view' | 'column_view'. */
   layout: 'month_view',
 } as const
