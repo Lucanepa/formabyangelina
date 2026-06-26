@@ -15,7 +15,7 @@
     "title": "Angebot",
     "subtitle": "Vier Wege, dich stärker, beweglicher und erholt zu fühlen.",
     "book": "Buchen",
-    "duration": "{min} Min.",
+    "perHour": "/ Std.",
     "personalTraining": {
       "title": "Personal Training",
       "description": "TODO: Kurzbeschreibung Personal Training (2–3 Sätze)."
@@ -40,7 +40,8 @@
   },
   "booking": {
     "title": "Termin buchen",
-    "subtitle": "Wähle eine Session und buche direkt online.",
+    "subtitle": "{price} pro Stunde — buchbar als 1, 2 oder 3 Stunden.",
+    "hours": "{h} Std.",
     "loading": "Buchungskalender wird geladen …"
   },
   "footer": {

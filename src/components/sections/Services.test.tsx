@@ -28,12 +28,12 @@ describe('Services', () => {
     expect(screen.getByText('Physiotherapie & Faszien-Release')).toBeInTheDocument()
   })
 
-  it('wires each Book button to its Cal.com event slug', () => {
+  it('routes every Book button to the single session event', () => {
     renderServices()
     const bookButtons = screen.getAllByRole('button', { name: 'Buchen' })
     expect(bookButtons).toHaveLength(4)
     for (const btn of bookButtons) {
-      expect(btn.getAttribute('data-cal-link')).toMatch(/\/(pt|nutrition|yoga|physio)-60$/)
+      expect(btn.getAttribute('data-cal-link')).toBe('formabyangelina/session')
     }
   })
 })

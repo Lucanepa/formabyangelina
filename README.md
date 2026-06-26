@@ -33,7 +33,7 @@ Real copy is left as clearly-marked `TODO`s — fill these before launch:
 
 - **Strings** — `src/i18n/de.json` (primary) + `src/i18n/en.json`: hero tagline, service copy, Angelina's bio, contact details, and the **legal notice** (required for Stripe/TWINT).
 - **About photo** — drop in a real image of Angelina (the About section has a placeholder slot).
-- **Booking** — `src/config/booking.ts`: Cal.com `username` is set (`formabyangelina`); confirm each event `slug` matches the Cal.com event types and set the CHF price per service.
+- **Booking** — `src/config/booking.ts`: Cal.com `username` is set (`formabyangelina`). One bookable event, slug `session`, at **CHF 100/hour**, bookable as **1, 2 or 3 hours**. The four service cards are descriptive focuses that all open this one event.
 
 Dates/times: always go through `formatDate` / `formatTime` in `src/lib/utils.ts` (de-CH, `dd.mm.yyyy` and 24h `HH:MM`). Colours: use the semantic token utilities only (e.g. `bg-primary`, `text-muted-foreground`) — never raw hex.
 
@@ -46,18 +46,25 @@ Stripe app on paid event types.
 
 ### Payment setup (manual, mostly dashboard)
 
-1. **Connect Stripe in Cal.com** — Cal.com → *Apps → Stripe → Install*, then connect the
+1. **Create the `session` event type** — one **multiple-duration** event with lengths
+   **60 / 120 / 180 min** (1, 2, 3 h) and slug `session`. The site offers the three
+   durations and funnels every "Book" here.
+2. **Connect Stripe in Cal.com** — Cal.com → *Apps → Stripe → Install*, then connect the
    Stripe account (Settings → Connect). Use a Swiss Stripe account (CHF payouts).
-2. **Set CHF prices per event type** — for each event (`pt-60`, `nutrition-60`,
-   `yoga-60`, `physio-60`): *Event type → Apps → Stripe →* enable *Require payment* and
-   set the price in **CHF**. Keep these in sync with `priceCHF` in `src/config/booking.ts`.
-3. **Enable TWINT in the Stripe dashboard** — Stripe → *Settings → Payment methods* →
+3. **Price it at CHF 100/hour** — on the `session` event, *Apps → Stripe →* enable
+   *Require payment*. The rate is **CHF 100/hour** (1 h = 100, 2 h = 200, 3 h = 300),
+   mirrored by `session.hourlyCHF` in `src/config/booking.ts`. ⚠️ Verify your Cal.com plan
+   charges **per selected duration** — if it only supports a flat per-event price, either
+   set the 1 h price and collect the balance by QR-bill, or split into separate
+   `session-1h` / `session-2h` / `session-3h` event types and list those slugs in
+   `booking.ts` instead.
+4. **Enable TWINT in the Stripe dashboard** — Stripe → *Settings → Payment methods* →
    enable **TWINT** (and Cards). TWINT needs a CHF-capable Stripe account and shows up at
    checkout automatically for CHF amounts.
-4. **QR-bill for packages (low/no-fee option)** — for multi-session packages or invoiced
+5. **QR-bill for packages (low/no-fee option)** — for multi-session packages or invoiced
    clients, prefer a **Swiss QR-bill** invoice (bank transfer, no card fees) instead of the
-   Cal.com/Stripe online flow. Reserve the online Stripe/TWINT path for single drop-in
-   sessions where instant payment matters.
+   Cal.com/Stripe online flow. Reserve the online Stripe/TWINT path for single sessions
+   where instant payment matters.
 
 > The legal notice / imprint in the footer (`footer.legal` in the i18n files) is
 > **required** before enabling Stripe/TWINT — fill it in with the real business details.

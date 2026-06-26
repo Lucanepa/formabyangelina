@@ -15,7 +15,7 @@
     "title": "Services",
     "subtitle": "Four ways to feel stronger, more mobile and recovered.",
     "book": "Book",
-    "duration": "{min} min",
+    "perHour": "/ hr",
     "personalTraining": {
       "title": "Personal Training",
       "description": "TODO: short copy for Personal Training (2–3 sentences)."
@@ -40,7 +40,8 @@
   },
   "booking": {
     "title": "Book a session",
-    "subtitle": "Pick a session and book directly online.",
+    "subtitle": "{price} per hour — book 1, 2 or 3 hours.",
+    "hours": "{h} h",
     "loading": "Loading booking calendar …"
   },
   "footer": {

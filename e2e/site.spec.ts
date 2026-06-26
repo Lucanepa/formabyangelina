@@ -15,6 +15,14 @@ test('all four service cards render', async ({ page }) => {
   await expect(cards).toHaveCount(4)
 })
 
+test('offers 1, 2 and 3 hour booking options', async ({ page }) => {
+  const options = page.getByTestId('duration-options').locator('button')
+  await expect(options).toHaveCount(3)
+  await expect(options.nth(0)).toContainText('CHF 100')
+  await expect(options.nth(1)).toContainText('CHF 200')
+  await expect(options.nth(2)).toContainText('CHF 300')
+})
+
 test('booking embed mounts', async ({ page }) => {
   const embed = page.getByTestId('booking-embed')
   await embed.scrollIntoViewIfNeeded()

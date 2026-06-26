@@ -2,12 +2,11 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardContent,
   CardFooter,
 } from '@/components/ui/card'
 import { BookButton } from '@/components/BookButton'
-import { services, formatCHF } from '@/config/booking'
+import { services, session, formatCHF } from '@/config/booking'
 import { useT } from '@/i18n'
 
 export function Services() {
@@ -35,17 +34,17 @@ export function Services() {
                   </span>
                   <CardTitle>{t(`services.${s.i18nKey}.title`)}</CardTitle>
                 </div>
-                <CardDescription className="pt-1">
-                  {t('services.duration', { min: s.durationMin })}
-                </CardDescription>
               </CardHeader>
               {/* TODO: replace service copy with real text (see i18n services.*) */}
               <CardContent className="flex-1 text-sm text-muted-foreground">
                 {t(`services.${s.i18nKey}.description`)}
               </CardContent>
               <CardFooter className="items-center justify-between">
-                <span className="text-lg font-semibold">{formatCHF(s.priceCHF)}</span>
-                <BookButton slug={s.slug} variant="outline">
+                <span className="text-sm font-medium">
+                  {formatCHF(session.hourlyCHF)}{' '}
+                  <span className="text-muted-foreground">{t('services.perHour')}</span>
+                </span>
+                <BookButton slug={session.slug} variant="outline">
                   {t('services.book')}
                 </BookButton>
               </CardFooter>
