@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "services": "Angebot",
+    "about": "Über Angelina",
+    "booking": "Termin",
+    "book": "Termin buchen"
+  },
+  "hero": {
+    "eyebrow": "Personal Training · Ernährung · Yoga · Faszien — Zürich",
+    "title": "Forma by Angelina",
+    "tagline": "TODO: Tagline einsetzen — z. B. «Kraft, Beweglichkeit und Erholung. Körperzentriertes Training und Bewegung in Zürich.»",
+    "cta": "Termin buchen"
+  },
+  "services": {
+    "title": "Angebot",
+    "subtitle": "Vier Wege, dich stärker, beweglicher und erholt zu fühlen.",
+    "book": "Buchen",
+    "duration": "{min} Min.",
+    "personalTraining": {
+      "title": "Personal Training",
+      "description": "TODO: Kurzbeschreibung Personal Training (2–3 Sätze)."
+    },
+    "nutrition": {
+      "title": "Ernährungscoaching",
+      "description": "TODO: Kurzbeschreibung Ernährungscoaching (2–3 Sätze)."
+    },
+    "yoga": {
+      "title": "Yoga",
+      "description": "TODO: Kurzbeschreibung Yoga (2–3 Sätze)."
+    },
+    "physioFascia": {
+      "title": "Physiotherapie & Faszien-Release",
+      "description": "TODO: Kurzbeschreibung Physiotherapie & Faszien-Release (2–3 Sätze)."
+    }
+  },
+  "about": {
+    "title": "Über Angelina",
+    "bio": "TODO: Kurzbiografie von Angelina (Ausbildung, Ansatz, Philosophie).",
+    "imageAlt": "TODO: Bildbeschreibung von Angelina"
+  },
+  "booking": {
+    "title": "Termin buchen",
+    "subtitle": "Wähle eine Session und buche direkt online.",
+    "loading": "Buchungskalender wird geladen …"
+  },
+  "footer": {
+    "contactTitle": "Kontakt",
+    "email": "TODO: hallo@formabyangelina.ch",
+    "phone": "TODO: +41 00 000 00 00",
+    "location": "Zürich",
+    "legalTitle": "Impressum",
+    "legal": "TODO: Impressum / rechtlicher Hinweis (Name, Adresse, Rechtsform) — für Stripe/TWINT erforderlich.",
+    "socialTitle": "Folgen",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "actions": {
+    "toggleTheme": "Design wechseln",
+    "toggleLanguage": "Sprache wechseln"
+  }
+}

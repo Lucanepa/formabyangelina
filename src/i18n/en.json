@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About Angelina",
+    "booking": "Booking",
+    "book": "Book a session"
+  },
+  "hero": {
+    "eyebrow": "Personal training · Nutrition · Yoga · Fascia — Zürich",
+    "title": "Forma by Angelina",
+    "tagline": "TODO: tagline — e.g. “Strength, mobility and recovery. Body-led training and movement in Zürich.”",
+    "cta": "Book a session"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Four ways to feel stronger, more mobile and recovered.",
+    "book": "Book",
+    "duration": "{min} min",
+    "personalTraining": {
+      "title": "Personal Training",
+      "description": "TODO: short copy for Personal Training (2–3 sentences)."
+    },
+    "nutrition": {
+      "title": "Nutrition Coaching",
+      "description": "TODO: short copy for Nutrition Coaching (2–3 sentences)."
+    },
+    "yoga": {
+      "title": "Yoga",
+      "description": "TODO: short copy for Yoga (2–3 sentences)."
+    },
+    "physioFascia": {
+      "title": "Physical Therapy & Fascia Release",
+      "description": "TODO: short copy for Physical Therapy & Fascia Release (2–3 sentences)."
+    }
+  },
+  "about": {
+    "title": "About Angelina",
+    "bio": "TODO: short bio for Angelina (training, approach, philosophy).",
+    "imageAlt": "TODO: photo description of Angelina"
+  },
+  "booking": {
+    "title": "Book a session",
+    "subtitle": "Pick a session and book directly online.",
+    "loading": "Loading booking calendar …"
+  },
+  "footer": {
+    "contactTitle": "Contact",
+    "email": "TODO: hello@formabyangelina.ch",
+    "phone": "TODO: +41 00 000 00 00",
+    "location": "Zürich",
+    "legalTitle": "Legal notice",
+    "legal": "TODO: legal notice / imprint (name, address, legal form) — required for Stripe/TWINT.",
+    "socialTitle": "Follow",
+    "rights": "All rights reserved."
+  },
+  "actions": {
+    "toggleTheme": "Toggle theme",
+    "toggleLanguage": "Toggle language"
+  }
+}

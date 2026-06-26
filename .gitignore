@@ -9,3 +9,9 @@ ds-bundle/
 .ds-sync/
 .design-sync/.cache/
 .design-sync/learnings/
+
+# Test artifacts
+test-results/
+playwright-report/
+playwright/.cache/
+*.tsbuildinfo
