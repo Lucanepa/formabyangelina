@@ -9,3 +9,4 @@ ds-bundle/
 .ds-sync/
 .design-sync/.cache/
 .design-sync/learnings/
+*.tsbuildinfo

@@ -11,6 +11,7 @@ import {
   CardContent,
   CardFooter,
 } from '@/components/ui/card'
+import { Logo } from '@/components/Logo'
 
 const sessions = [
   {
@@ -69,11 +70,8 @@ export default function App() {
       {/* Nav */}
       <header className="sticky top-0 z-20 border-b border-border/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
-          <a href="#" className="flex items-center gap-2 font-semibold tracking-tight">
-            <span className="grid size-7 place-items-center rounded-lg bg-primary text-primary-foreground">
-              F
-            </span>
-            <span>Forma <span className="text-muted-foreground font-normal">by Angelina</span></span>
+          <a href="#" aria-label="Forma by Angelina" className="flex items-center">
+            <Logo className="h-9 w-auto text-foreground" />
           </a>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground sm:flex">
             <a href="#sessions" className="transition-colors hover:text-foreground">Sessions</a>
@@ -193,10 +191,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-2 font-medium text-foreground">
-            <span className="grid size-6 place-items-center rounded-md bg-primary text-primary-foreground">F</span>
-            Forma by Angelina
-          </div>
+          <Logo className="h-7 w-auto text-foreground" />
           <span className="flex items-center gap-1.5"><MapPin className="size-3.5" /> Zürich · by appointment</span>
           <span>© {new Date().getFullYear()} Forma by Angelina</span>
         </div>
