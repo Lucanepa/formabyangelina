@@ -33,7 +33,7 @@ Real copy is left as clearly-marked `TODO`s — fill these before launch:
 
 - **Strings** — `src/i18n/de.json` (primary) + `src/i18n/en.json`: hero tagline, service copy, Angelina's bio, contact details, and the **legal notice** (required for Stripe/TWINT).
 - **About photo** — drop in a real image of Angelina (the About section has a placeholder slot).
-- **Booking** — `src/config/booking.ts`: Cal.com **EU instance** (`www.cal.eu`), handle `formabyangelina`. Session is **CHF 100/hour**, offered as **1 / 2 / 3 hours** — one event type per length (`coaching`, `coaching-120`, `coaching-180`) so Stripe charges the right amount. The four service cards are descriptive focuses that all link to the Booking section, where a duration switch picks the event.
+- **Booking** — `src/config/booking.ts`: Cal.com **EU instance** (`www.cal.eu`), handle `formabyangelina`. Session is **CHF 100/hour**, offered as **1 / 2 hours** — one event type per length (`coaching`, `coaching-120`) so Stripe charges the right amount. The four service cards are descriptive focuses that all link to the Booking section, where a duration switch picks the event.
 
 Dates/times: always go through `formatDate` / `formatTime` in `src/lib/utils.ts` (de-CH, `dd.mm.yyyy` and 24h `HH:MM`). Colours: use the semantic token utilities only (e.g. `bg-primary`, `text-muted-foreground`) — never raw hex.
 
@@ -53,18 +53,18 @@ Each length is its own Cal.com event type so Stripe charges correctly. The slugs
 |---|---|---|
 | 1 hour | `coaching` | CHF 100 |
 | 2 hours | `coaching-120` | CHF 200 |
-| 3 hours | `coaching-180` | CHF 300 |
 
-> Set each event's **length** to match (60 / 120 / 180 min) and **enable** it. If you rename
-> a slug or add/remove a duration, edit `bookingOptions` to match.
+> Set each event's **length** to match (60 / 120 min) and **enable** it. To add a 3-hour
+> option later, create a `coaching-180` event and add it to `bookingOptions`. If you rename
+> a slug, edit `bookingOptions` to match.
 
 ### Payment setup (manual, mostly dashboard)
 
 1. **Connect Stripe in Cal.com** — Cal.com → *Apps → Stripe → Install*, then connect the
    Stripe account (Settings → Connect). Use a Swiss Stripe account (CHF payouts).
-2. **Price each event** — on `coaching` / `coaching-120` / `coaching-180`, *Apps → Stripe →*
-   enable *Require payment* and set **CHF 100 / 200 / 300** respectively (mirrors
-   `priceCHF` in `bookingOptions`).
+2. **Price each event** — on `coaching` / `coaching-120`, *Apps → Stripe →* enable
+   *Require payment* and set **CHF 100 / 200** respectively (mirrors `priceCHF` in
+   `bookingOptions`).
 3. **Enable TWINT in the Stripe dashboard** — Stripe → *Settings → Payment methods* →
    enable **TWINT** (and Cards). TWINT needs a CHF-capable Stripe account and shows up at
    checkout automatically for CHF amounts.

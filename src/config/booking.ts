@@ -11,13 +11,14 @@ import {
  *
  * Bookings run on Cal.com's EU instance (cal.eu) under the handle
  * `formabyangelina`. There is one bookable session, charged at CHF 100 per
- * hour, offered in 1-, 2- and 3-hour lengths — each length is its own Cal.com
+ * hour, offered in 1- and 2-hour lengths — each length is its own Cal.com
  * event type so Stripe charges the correct amount per duration. The four
  * services are descriptive focuses; all of them book the same session.
  *
- * TODO(angelina): create/confirm the event types in Cal.com — `coaching` (60m,
- * CHF 100), `coaching-120` (120m, CHF 200), `coaching-180` (180m, CHF 300) —
- * and make sure each is enabled and priced via the Stripe app.
+ * TODO(angelina): confirm the event types in Cal.com — `coaching` (60m,
+ * CHF 100) and `coaching-120` (120m, CHF 200) — are enabled and priced via
+ * the Stripe app. (To add a 3-hour option later: create a `coaching-180`
+ * event type and add it to `bookingOptions` below.)
  */
 export const calcom = {
   /** Cal.com handle → www.cal.eu/formabyangelina */
@@ -45,8 +46,6 @@ export interface BookingOption {
 export const bookingOptions: BookingOption[] = [
   { hours: 1, slug: 'coaching', priceCHF: 100 },
   { hours: 2, slug: 'coaching-120', priceCHF: 200 },
-  // TODO(angelina): create this 3-hour event type in Cal.com (180m, CHF 300).
-  { hours: 3, slug: 'coaching-180', priceCHF: 300 },
 ]
 
 export const defaultBookingOption = bookingOptions[0]

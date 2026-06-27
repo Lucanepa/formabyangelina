@@ -40,7 +40,7 @@
   },
   "booking": {
     "title": "Book a session",
-    "subtitle": "{price} per hour — book 1, 2 or 3 hours.",
+    "subtitle": "{price} per hour — book 1 or 2 hours.",
     "hours": "{h} h",
     "loading": "Loading booking calendar …"
   },
