@@ -28,12 +28,12 @@ describe('Services', () => {
     expect(screen.getByText('Physiotherapie & Faszien-Release')).toBeInTheDocument()
   })
 
-  it('routes every Book button to the single session event', () => {
+  it('every Book link points to the booking section', () => {
     renderServices()
-    const bookButtons = screen.getAllByRole('button', { name: 'Buchen' })
-    expect(bookButtons).toHaveLength(4)
-    for (const btn of bookButtons) {
-      expect(btn.getAttribute('data-cal-link')).toBe('formabyangelina/session')
+    const bookLinks = screen.getAllByRole('link', { name: 'Buchen' })
+    expect(bookLinks).toHaveLength(4)
+    for (const link of bookLinks) {
+      expect(link).toHaveAttribute('href', '#booking')
     }
   })
 })

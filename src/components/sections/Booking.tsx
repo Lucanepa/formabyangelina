@@ -1,39 +1,47 @@
+import { useState } from 'react'
 import Cal from '@calcom/embed-react'
-import { BookButton } from '@/components/BookButton'
+import { Button } from '@/components/ui/button'
 import {
+  bookingOptions,
   calConfig,
   calLink,
-  defaultBookingSlug,
+  calcom,
+  defaultBookingOption,
   formatCHF,
-  priceForHours,
-  session,
 } from '@/config/booking'
 import { useI18n } from '@/i18n'
 
 export function Booking({ dark }: { dark: boolean }) {
   const { t } = useI18n()
   const theme = dark ? 'dark' : 'light'
+  const [hours, setHours] = useState(defaultBookingOption.hours)
+  const selected = bookingOptions.find((o) => o.hours === hours) ?? defaultBookingOption
 
   return (
     <section id="booking" className="mx-auto max-w-5xl scroll-mt-20 px-5 py-16">
       <div className="mb-6">
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t('booking.title')}</h2>
         <p className="mt-1 text-muted-foreground">
-          {t('booking.subtitle', { price: formatCHF(session.hourlyCHF) })}
+          {t('booking.subtitle', { price: formatCHF(calcom.hourlyCHF) })}
         </p>
       </div>
 
-      {/* Quick-book by duration — all open the same session, preset 1/2/3 h. */}
-      <div className="mb-8 flex flex-wrap gap-3" data-testid="duration-options">
-        {session.durationsHours.map((h) => (
-          <BookButton
-            key={h}
-            slug={session.slug}
-            durationHours={h}
-            variant={h === session.defaultDurationHours ? 'default' : 'outline'}
+      {/* Pick a duration — switches which event is embedded below. */}
+      <div
+        className="mb-8 flex flex-wrap gap-3"
+        data-testid="duration-options"
+        role="group"
+        aria-label={t('booking.title')}
+      >
+        {bookingOptions.map((o) => (
+          <Button
+            key={o.hours}
+            variant={o.hours === hours ? 'default' : 'outline'}
+            aria-pressed={o.hours === hours}
+            onClick={() => setHours(o.hours)}
           >
-            {t('booking.hours', { h })} · {formatCHF(priceForHours(h))}
-          </BookButton>
+            {t('booking.hours', { h: o.hours })} · {formatCHF(o.priceCHF)}
+          </Button>
         ))}
       </div>
 
@@ -42,11 +50,13 @@ export function Booking({ dark }: { dark: boolean }) {
         className="overflow-hidden rounded-2xl border border-border bg-card shadow-card"
       >
         <Cal
-          /* Re-mount on theme change so the embed picks up light/dark. */
-          key={theme}
-          calLink={calLink(defaultBookingSlug)}
+          /* Re-mount when the chosen event or theme changes. */
+          key={`${selected.slug}-${theme}`}
+          calOrigin={calcom.origin}
+          embedJsUrl={calcom.embedJsUrl}
+          calLink={calLink(selected.slug)}
           style={{ width: '100%', height: '640px', overflow: 'auto' }}
-          config={{ ...calConfig(session.defaultDurationHours), theme }}
+          config={calConfig(theme)}
         />
       </div>
     </section>

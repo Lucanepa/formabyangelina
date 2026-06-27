@@ -1,5 +1,4 @@
 import { useDarkMode } from '@/hooks/useDarkMode'
-import { useCalcom } from '@/hooks/useCalcom'
 import { SiteHeader } from '@/components/sections/SiteHeader'
 import { Hero } from '@/components/sections/Hero'
 import { Services } from '@/components/sections/Services'
@@ -9,7 +8,6 @@ import { SiteFooter } from '@/components/sections/SiteFooter'
 
 export default function App() {
   const { dark, toggle } = useDarkMode()
-  useCalcom(dark)
 
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">

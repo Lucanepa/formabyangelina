@@ -9,11 +9,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 - Marketing + booking site: Hero, Services (Personal Training, Nutrition Coaching,
   Yoga, Physical Therapy & Fascia Release), About, Booking and Footer sections.
-- Cal.com booking via `@calcom/embed-react` — inline embed on the Booking section
-  and a modal on each service card. One bookable `session` event at **CHF 100/hour**,
-  bookable as **1, 2 or 3 hours** (with quick-book buttons + prices); the four service
-  cards are descriptive focuses that all open it. Config centralised in
-  `src/config/booking.ts` (username `formabyangelina`).
+- Cal.com booking via `@calcom/embed-react` on the **EU instance** (`www.cal.eu`,
+  handle `formabyangelina`). Inline calendar with a **1 / 2 / 3-hour** switch at
+  **CHF 100/hour** — one event type per length (`coaching`, `coaching-120`,
+  `coaching-180`) so Stripe charges correctly. The four service cards are descriptive
+  focuses that link to the Booking section. Config centralised in
+  `src/config/booking.ts`.
 - German-first i18n (DE primary, EN secondary) in `src/i18n/{de,en}.json` with a
   minimal `I18nProvider` / `useT` and a language toggle.
 - Swiss date/time helpers `formatDate` (dd.mm.yyyy) and `formatTime` (24h HH:MM),

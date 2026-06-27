@@ -5,8 +5,8 @@ import {
   CardContent,
   CardFooter,
 } from '@/components/ui/card'
-import { BookButton } from '@/components/BookButton'
-import { services, session, formatCHF } from '@/config/booking'
+import { Button } from '@/components/ui/button'
+import { services, calcom, formatCHF } from '@/config/booking'
 import { useT } from '@/i18n'
 
 export function Services() {
@@ -41,12 +41,12 @@ export function Services() {
               </CardContent>
               <CardFooter className="items-center justify-between">
                 <span className="text-sm font-medium">
-                  {formatCHF(session.hourlyCHF)}{' '}
+                  {formatCHF(calcom.hourlyCHF)}{' '}
                   <span className="text-muted-foreground">{t('services.perHour')}</span>
                 </span>
-                <BookButton slug={session.slug} variant="outline">
-                  {t('services.book')}
-                </BookButton>
+                <Button variant="outline" asChild>
+                  <a href="#booking">{t('services.book')}</a>
+                </Button>
               </CardFooter>
             </Card>
           )

@@ -33,35 +33,42 @@ Real copy is left as clearly-marked `TODO`s — fill these before launch:
 
 - **Strings** — `src/i18n/de.json` (primary) + `src/i18n/en.json`: hero tagline, service copy, Angelina's bio, contact details, and the **legal notice** (required for Stripe/TWINT).
 - **About photo** — drop in a real image of Angelina (the About section has a placeholder slot).
-- **Booking** — `src/config/booking.ts`: Cal.com `username` is set (`formabyangelina`). One bookable event, slug `session`, at **CHF 100/hour**, bookable as **1, 2 or 3 hours**. The four service cards are descriptive focuses that all open this one event.
+- **Booking** — `src/config/booking.ts`: Cal.com **EU instance** (`www.cal.eu`), handle `formabyangelina`. Session is **CHF 100/hour**, offered as **1 / 2 / 3 hours** — one event type per length (`coaching`, `coaching-120`, `coaching-180`) so Stripe charges the right amount. The four service cards are descriptive focuses that all link to the Booking section, where a duration switch picks the event.
 
 Dates/times: always go through `formatDate` / `formatTime` in `src/lib/utils.ts` (de-CH, `dd.mm.yyyy` and 24h `HH:MM`). Colours: use the semantic token utilities only (e.g. `bg-primary`, `text-muted-foreground`) — never raw hex.
 
 ## Booking & payments
 
-Booking runs entirely through **Cal.com** (hosted free plan) via `@calcom/embed-react`:
-the Booking section shows an inline calendar and each service card opens that service's
-event in a modal. There is **no custom payment UI** — payments are handled by Cal.com's
+Booking runs through **Cal.com's EU instance** (`www.cal.eu`) via `@calcom/embed-react`:
+the Booking section shows an inline calendar with a 1 / 2 / 3-hour switch, and the service
+cards link down to it. There is **no custom payment UI** — payments are handled by Cal.com's
 Stripe app on paid event types.
+
+### Event types (one per duration)
+
+Each length is its own Cal.com event type so Stripe charges correctly. The slugs must match
+`bookingOptions` in `src/config/booking.ts`:
+
+| Duration | Slug | Price |
+|---|---|---|
+| 1 hour | `coaching` | CHF 100 |
+| 2 hours | `coaching-120` | CHF 200 |
+| 3 hours | `coaching-180` | CHF 300 |
+
+> Set each event's **length** to match (60 / 120 / 180 min) and **enable** it. If you rename
+> a slug or add/remove a duration, edit `bookingOptions` to match.
 
 ### Payment setup (manual, mostly dashboard)
 
-1. **Create the `session` event type** — one **multiple-duration** event with lengths
-   **60 / 120 / 180 min** (1, 2, 3 h) and slug `session`. The site offers the three
-   durations and funnels every "Book" here.
-2. **Connect Stripe in Cal.com** — Cal.com → *Apps → Stripe → Install*, then connect the
+1. **Connect Stripe in Cal.com** — Cal.com → *Apps → Stripe → Install*, then connect the
    Stripe account (Settings → Connect). Use a Swiss Stripe account (CHF payouts).
-3. **Price it at CHF 100/hour** — on the `session` event, *Apps → Stripe →* enable
-   *Require payment*. The rate is **CHF 100/hour** (1 h = 100, 2 h = 200, 3 h = 300),
-   mirrored by `session.hourlyCHF` in `src/config/booking.ts`. ⚠️ Verify your Cal.com plan
-   charges **per selected duration** — if it only supports a flat per-event price, either
-   set the 1 h price and collect the balance by QR-bill, or split into separate
-   `session-1h` / `session-2h` / `session-3h` event types and list those slugs in
-   `booking.ts` instead.
-4. **Enable TWINT in the Stripe dashboard** — Stripe → *Settings → Payment methods* →
+2. **Price each event** — on `coaching` / `coaching-120` / `coaching-180`, *Apps → Stripe →*
+   enable *Require payment* and set **CHF 100 / 200 / 300** respectively (mirrors
+   `priceCHF` in `bookingOptions`).
+3. **Enable TWINT in the Stripe dashboard** — Stripe → *Settings → Payment methods* →
    enable **TWINT** (and Cards). TWINT needs a CHF-capable Stripe account and shows up at
    checkout automatically for CHF amounts.
-5. **QR-bill for packages (low/no-fee option)** — for multi-session packages or invoiced
+4. **QR-bill for packages (low/no-fee option)** — for multi-session packages or invoiced
    clients, prefer a **Swiss QR-bill** invoice (bank transfer, no card fees) instead of the
    Cal.com/Stripe online flow. Reserve the online Stripe/TWINT path for single sessions
    where instant payment matters.
