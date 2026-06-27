@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { LogoLockup } from '@/components/Logo'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { LanguageToggle } from '@/components/LanguageToggle'
 import { useT } from '@/i18n'
@@ -8,13 +9,8 @@ export function SiteHeader({ dark, onToggleTheme }: { dark: boolean; onToggleThe
   return (
     <header className="sticky top-0 z-20 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
-        <a href="#top" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="grid size-7 place-items-center rounded-lg bg-primary text-primary-foreground">
-            F
-          </span>
-          <span>
-            Forma <span className="font-normal text-muted-foreground">by Angelina</span>
-          </span>
+        <a href="#top" aria-label="Forma by Angelina" className="flex items-center">
+          <LogoLockup className="h-12 w-auto text-foreground" />
         </a>
 
         <nav className="hidden items-center gap-6 text-sm text-muted-foreground sm:flex">

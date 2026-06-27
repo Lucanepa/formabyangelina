@@ -1,4 +1,5 @@
 import { EnvelopeSimple, InstagramLogo, MapPin, Phone } from '@phosphor-icons/react'
+import { LogoLockup } from '@/components/Logo'
 import { useT } from '@/i18n'
 
 export function SiteFooter() {
@@ -51,12 +52,7 @@ export function SiteFooter() {
       </div>
 
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-6 text-xs text-muted-foreground">
-        <span className="flex items-center gap-2 font-medium text-foreground">
-          <span className="grid size-6 place-items-center rounded-md bg-primary text-primary-foreground">
-            F
-          </span>
-          Forma by Angelina
-        </span>
+        <LogoLockup className="h-12 w-auto text-foreground" />
         <span>
           © {year} Forma by Angelina. {t('footer.rights')}
         </span>
