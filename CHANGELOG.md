@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+- Replaced placeholder `TODO` copy with real content — hero tagline, the four service
+  descriptions, and Angelina's bio — in `src/i18n/{de,en}.json`.
+- Footer: removed unverified contact details (phone, email, Instagram). Contact is now
+  Zürich + the online booking; the Impressum states only verified facts (Forma by
+  Angelina · Angelina Bogner · Zürich) pending full legal details.
+- About: the photo slot now shows a styled placeholder portrait (real image still to come).
+
 ## [1.0.0] — 2026-06-26
 
 ### Added

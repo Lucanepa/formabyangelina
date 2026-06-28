@@ -8,7 +8,7 @@
   "hero": {
     "eyebrow": "Personal training · Nutrition · Yoga · Fascia — Zürich",
     "title": "Forma by Angelina",
-    "tagline": "TODO: tagline — e.g. “Strength, mobility and recovery. Body-led training and movement in Zürich.”",
+    "tagline": "Strength, mobility and recovery — body-led training and movement in Zürich.",
     "cta": "Book a session"
   },
   "services": {
@@ -18,25 +18,25 @@
     "perHour": "/ hr",
     "personalTraining": {
       "title": "Personal Training",
-      "description": "TODO: short copy for Personal Training (2–3 sentences)."
+      "description": "One-on-one strength training tailored to your body and goals — for more strength, stability and confident movement."
     },
     "nutrition": {
       "title": "Nutrition Coaching",
-      "description": "TODO: short copy for Nutrition Coaching (2–3 sentences)."
+      "description": "Practical nutrition coaching that fits your life — sustainable, without rigid rules, focused on energy and well-being."
     },
     "yoga": {
       "title": "Yoga",
-      "description": "TODO: short copy for Yoga (2–3 sentences)."
+      "description": "Calm, body-led yoga for mobility, breath and awareness — a mindful counterbalance to everyday life."
     },
     "physioFascia": {
       "title": "Physical Therapy & Fascia Release",
-      "description": "TODO: short copy for Physical Therapy & Fascia Release (2–3 sentences)."
+      "description": "Targeted fascia and bodywork to release tension, support recovery and restore mobility."
     }
   },
   "about": {
     "title": "About Angelina",
-    "bio": "TODO: short bio for Angelina (training, approach, philosophy).",
-    "imageAlt": "TODO: photo description of Angelina"
+    "bio": "Angelina Bogner is a personal trainer and movement coach in Zürich. With Forma she brings together strength training, nutrition, yoga and fascia work into one body-led practice. Her approach is calm and individual: she meets you where your body is today and helps you build strength, mobility and well-being.",
+    "imageAlt": "Portrait of Angelina Bogner"
   },
   "booking": {
     "title": "Book a session",
@@ -46,12 +46,9 @@
   },
   "footer": {
     "contactTitle": "Contact",
-    "email": "TODO: hello@formabyangelina.ch",
-    "phone": "TODO: +41 00 000 00 00",
-    "location": "Zürich",
+    "location": "Zürich, Switzerland",
     "legalTitle": "Legal notice",
-    "legal": "TODO: legal notice / imprint (name, address, legal form) — required for Stripe/TWINT.",
-    "socialTitle": "Follow",
+    "legal": "Forma by Angelina · Angelina Bogner · Zürich, Switzerland. Contact via the online booking.",
     "rights": "All rights reserved."
   },
   "actions": {

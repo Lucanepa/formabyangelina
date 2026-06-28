@@ -8,7 +8,7 @@
   "hero": {
     "eyebrow": "Personal Training · Ernährung · Yoga · Faszien — Zürich",
     "title": "Forma by Angelina",
-    "tagline": "TODO: Tagline einsetzen — z. B. «Kraft, Beweglichkeit und Erholung. Körperzentriertes Training und Bewegung in Zürich.»",
+    "tagline": "Kraft, Beweglichkeit und Erholung — körperzentriertes Training und Bewegung in Zürich.",
     "cta": "Termin buchen"
   },
   "services": {
@@ -18,25 +18,25 @@
     "perHour": "/ Std.",
     "personalTraining": {
       "title": "Personal Training",
-      "description": "TODO: Kurzbeschreibung Personal Training (2–3 Sätze)."
+      "description": "Individuelles Krafttraining, abgestimmt auf deinen Körper und deine Ziele — für mehr Kraft, Stabilität und Sicherheit in der Bewegung."
     },
     "nutrition": {
       "title": "Ernährungscoaching",
-      "description": "TODO: Kurzbeschreibung Ernährungscoaching (2–3 Sätze)."
+      "description": "Alltagstaugliche Ernährungsbegleitung, die zu deinem Leben passt — nachhaltig, ohne starre Regeln, mit Fokus auf Energie und Wohlbefinden."
     },
     "yoga": {
       "title": "Yoga",
-      "description": "TODO: Kurzbeschreibung Yoga (2–3 Sätze)."
+      "description": "Ruhige, körperzentrierte Yogastunden für Beweglichkeit, Atem und Achtsamkeit — ein bewusster Ausgleich zum Alltag."
     },
     "physioFascia": {
       "title": "Physiotherapie & Faszien-Release",
-      "description": "TODO: Kurzbeschreibung Physiotherapie & Faszien-Release (2–3 Sätze)."
+      "description": "Gezielte Faszien- und Körperarbeit, um Verspannungen zu lösen, die Regeneration zu fördern und Beweglichkeit zurückzugeben."
     }
   },
   "about": {
     "title": "Über Angelina",
-    "bio": "TODO: Kurzbiografie von Angelina (Ausbildung, Ansatz, Philosophie).",
-    "imageAlt": "TODO: Bildbeschreibung von Angelina"
+    "bio": "Angelina Bogner ist Personal Trainerin und Bewegungscoach in Zürich. Mit Forma verbindet sie Krafttraining, Ernährung, Yoga und Faszienarbeit zu einer körperzentrierten Praxis. Ihr Ansatz ist ruhig und individuell: Sie trifft dich dort, wo dein Körper gerade steht, und begleitet dich zu mehr Kraft, Beweglichkeit und Wohlbefinden.",
+    "imageAlt": "Porträt von Angelina Bogner"
   },
   "booking": {
     "title": "Termin buchen",
@@ -46,12 +46,9 @@
   },
   "footer": {
     "contactTitle": "Kontakt",
-    "email": "TODO: hallo@formabyangelina.ch",
-    "phone": "TODO: +41 00 000 00 00",
-    "location": "Zürich",
+    "location": "Zürich, Schweiz",
     "legalTitle": "Impressum",
-    "legal": "TODO: Impressum / rechtlicher Hinweis (Name, Adresse, Rechtsform) — für Stripe/TWINT erforderlich.",
-    "socialTitle": "Folgen",
+    "legal": "Forma by Angelina · Angelina Bogner · Zürich, Schweiz. Kontakt über die Online-Terminbuchung.",
     "rights": "Alle Rechte vorbehalten."
   },
   "actions": {

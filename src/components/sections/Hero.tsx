@@ -13,7 +13,6 @@ export function Hero() {
       <h1 className="max-w-2xl text-4xl font-semibold leading-[1.1] tracking-tight sm:text-6xl">
         {t('hero.title')}
       </h1>
-      {/* TODO: replace tagline with real copy (see i18n hero.tagline) */}
       <p className="mt-5 max-w-xl text-lg text-muted-foreground">{t('hero.tagline')}</p>
       <div className="mt-8 flex flex-wrap items-center gap-3">
         <Button size="lg" asChild>

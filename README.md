@@ -29,10 +29,11 @@ First Playwright run needs the browser once: `npx playwright install chromium`.
 
 ### Content & config
 
-Real copy is left as clearly-marked `TODO`s — fill these before launch:
+Copy is written in `src/i18n/de.json` (primary) + `src/i18n/en.json`. Two items still need
+Angelina's real input before launch:
 
-- **Strings** — `src/i18n/de.json` (primary) + `src/i18n/en.json`: hero tagline, service copy, Angelina's bio, contact details, and the **legal notice** (required for Stripe/TWINT).
-- **About photo** — drop in a real image of Angelina (the About section has a placeholder slot).
+- **About photo** — the About section shows a placeholder portrait; drop in a real image of Angelina (e.g. `/about.jpg`).
+- **Legal notice / Impressum** — `footer.legal` currently states only the verified facts (business name, proprietor Angelina Bogner, Zürich). Swiss law / Stripe expect full details (address, contact, and UID if registered) — extend it before enabling payments.
 - **Booking** — `src/config/booking.ts`: Cal.com **EU instance** (`www.cal.eu`), handle `formabyangelina`. Session is **CHF 100/hour**, offered as **1 / 2 hours** — one event type per length (`coaching`, `coaching-120`) so Stripe charges the right amount. The four service cards are descriptive focuses that all link to the Booking section, where a duration switch picks the event.
 
 Dates/times: always go through `formatDate` / `formatTime` in `src/lib/utils.ts` (de-CH, `dd.mm.yyyy` and 24h `HH:MM`). Colours: use the semantic token utilities only (e.g. `bg-primary`, `text-muted-foreground`) — never raw hex.

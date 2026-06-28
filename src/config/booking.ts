@@ -15,10 +15,9 @@ import {
  * event type so Stripe charges the correct amount per duration. The four
  * services are descriptive focuses; all of them book the same session.
  *
- * TODO(angelina): confirm the event types in Cal.com — `coaching` (60m,
- * CHF 100) and `coaching-120` (120m, CHF 200) — are enabled and priced via
- * the Stripe app. (To add a 3-hour option later: create a `coaching-180`
- * event type and add it to `bookingOptions` below.)
+ * Live Cal.com event types: `coaching` (60m, CHF 100) and `coaching-120`
+ * (120m, CHF 200). To add a 3-hour option later, create a `coaching-180`
+ * event type in Cal.com and add it to `bookingOptions` below.
  */
 export const calcom = {
   /** Cal.com handle → www.cal.eu/formabyangelina */

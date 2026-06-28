@@ -35,7 +35,6 @@ export function Services() {
                   <CardTitle>{t(`services.${s.i18nKey}.title`)}</CardTitle>
                 </div>
               </CardHeader>
-              {/* TODO: replace service copy with real text (see i18n services.*) */}
               <CardContent className="flex-1 text-sm text-muted-foreground">
                 {t(`services.${s.i18nKey}.description`)}
               </CardContent>
