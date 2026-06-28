@@ -7,6 +7,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 
 ### Added
+- **SEO essentials** — `public/robots.txt` + `public/sitemap.xml`; German `<title>` and
+  meta description, `canonical`, `theme-color`, Open Graph + Twitter cards, and
+  `HealthAndBeautyBusiness` JSON-LD (Zürich, services, CHF 100–200). Share image is an
+  interim logo SVG pending a dedicated 1200×630 raster. (Search Console submission +
+  prerendering are still open.)
 - **Packages** section — prepaid 5- and 10-session bundles (`packages` in
   `src/config/booking.ts`). Cal.com has no native package feature, so each "Buy"
   links to a **Stripe Payment Link** (created in the same Stripe account connected
