@@ -22,6 +22,11 @@ test('offers 1 and 2 hour booking options', async ({ page }) => {
   await expect(options.nth(1)).toContainText('CHF 200')
 })
 
+test('shows the package tiers', async ({ page }) => {
+  const cards = page.locator('[data-testid^="package-card-"]')
+  await expect(cards).toHaveCount(2)
+})
+
 test('booking embed mounts', async ({ page }) => {
   const embed = page.getByTestId('booking-embed')
   await embed.scrollIntoViewIfNeeded()

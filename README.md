@@ -69,10 +69,23 @@ Each length is its own Cal.com event type so Stripe charges correctly. The slugs
 3. **Enable TWINT in the Stripe dashboard** — Stripe → *Settings → Payment methods* →
    enable **TWINT** (and Cards). TWINT needs a CHF-capable Stripe account and shows up at
    checkout automatically for CHF amounts.
-4. **QR-bill for packages (low/no-fee option)** — for multi-session packages or invoiced
-   clients, prefer a **Swiss QR-bill** invoice (bank transfer, no card fees) instead of the
-   Cal.com/Stripe online flow. Reserve the online Stripe/TWINT path for single sessions
-   where instant payment matters.
+4. **QR-bill (low/no-fee alternative)** — for invoiced clients, a **Swiss QR-bill**
+   (bank transfer, no card fees) is an option instead of the online Stripe/TWINT flow.
+
+### Packages (prepaid bundles)
+
+Cal.com has **no native package/credit feature**, so packages use a split flow: sell the
+bundle up front, then book sessions for free.
+
+1. **Create a Stripe Payment Link per package** — in the **same** Stripe account connected
+   to Cal.com: *Stripe → Payment Links → New*, one for the 5-session and one for the
+   10-session bundle (TWINT/cards work here). Set the CHF price.
+2. **Paste the URLs** into `packages[].paymentUrl` in `src/config/booking.ts` (and adjust
+   `priceCHF` — defaults are the straight 5×/10× of CHF 100, no discount). Until a URL is
+   set, that package's "Buy" button stays disabled ("Coming soon").
+3. **Create a payment-free booking event** — a Cal.com event type (e.g. `package-session`,
+   no Stripe *Require payment*), shared as a private link with package clients to redeem
+   their sessions. Track remaining sessions manually (fine for a solo practice).
 
 > The legal notice / imprint in the footer (`footer.legal` in the i18n files) is
 > **required** before enabling Stripe/TWINT — fill it in with the real business details.

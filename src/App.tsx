@@ -4,6 +4,7 @@ import { Hero } from '@/components/sections/Hero'
 import { Services } from '@/components/sections/Services'
 import { About } from '@/components/sections/About'
 import { Booking } from '@/components/sections/Booking'
+import { Packages } from '@/components/sections/Packages'
 import { SiteFooter } from '@/components/sections/SiteFooter'
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Services />
         <About />
         <Booking dark={dark} />
+        <Packages />
       </main>
       <SiteFooter />
     </div>

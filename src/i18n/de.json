@@ -3,6 +3,7 @@
     "services": "Angebot",
     "about": "Über Angelina",
     "booking": "Termin",
+    "packages": "Pakete",
     "book": "Termin buchen"
   },
   "hero": {
@@ -32,6 +33,15 @@
       "title": "Physiotherapie & Faszien-Release",
       "description": "Gezielte Faszien- und Körperarbeit, um Verspannungen zu lösen, die Regeneration zu fördern und Beweglichkeit zurückzugeben."
     }
+  },
+  "packages": {
+    "title": "Pakete",
+    "subtitle": "Mehrere Sessions im Voraus — ideal für kontinuierliche Begleitung.",
+    "sessions": "{n} Sessions",
+    "perSession": "CHF {price} pro Session",
+    "buy": "Kaufen",
+    "soon": "Bald verfügbar",
+    "note": "Nach dem Kauf buchst du jede Session einzeln über deinen persönlichen Buchungslink."
   },
   "about": {
     "title": "Über Angelina",

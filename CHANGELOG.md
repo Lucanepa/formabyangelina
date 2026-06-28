@@ -6,6 +6,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+- **Packages** section — prepaid 5- and 10-session bundles (`packages` in
+  `src/config/booking.ts`). Cal.com has no native package feature, so each "Buy"
+  links to a **Stripe Payment Link** (created in the same Stripe account connected
+  to Cal.com); sessions are then booked against a payment-free Cal.com event and
+  usage tracked manually. "Buy" stays disabled until a `paymentUrl` is set.
+
 ### Changed
 - Replaced placeholder `TODO` copy with real content — hero tagline, the four service
   descriptions, and Angelina's bio — in `src/i18n/{de,en}.json`.

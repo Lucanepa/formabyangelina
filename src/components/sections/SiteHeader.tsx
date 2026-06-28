@@ -23,6 +23,9 @@ export function SiteHeader({ dark, onToggleTheme }: { dark: boolean; onToggleThe
           <a href="#booking" className="transition-colors hover:text-foreground">
             {t('nav.booking')}
           </a>
+          <a href="#packages" className="transition-colors hover:text-foreground">
+            {t('nav.packages')}
+          </a>
         </nav>
 
         <div className="flex items-center gap-1.5">

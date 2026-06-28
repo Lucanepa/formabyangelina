@@ -3,6 +3,7 @@
     "services": "Services",
     "about": "About Angelina",
     "booking": "Booking",
+    "packages": "Packages",
     "book": "Book a session"
   },
   "hero": {
@@ -32,6 +33,15 @@
       "title": "Physical Therapy & Fascia Release",
       "description": "Targeted fascia and bodywork to release tension, support recovery and restore mobility."
     }
+  },
+  "packages": {
+    "title": "Packages",
+    "subtitle": "Several sessions up front — ideal for ongoing work.",
+    "sessions": "{n} sessions",
+    "perSession": "CHF {price} per session",
+    "buy": "Buy",
+    "soon": "Coming soon",
+    "note": "After purchase you book each session individually via your personal booking link."
   },
   "about": {
     "title": "About Angelina",

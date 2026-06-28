@@ -71,6 +71,35 @@ export const services: Service[] = [
   { id: 'physio-fascia', i18nKey: 'physioFascia', icon: HandHeart },
 ]
 
+export interface SessionPackage {
+  /** Number of 1-hour sessions in the bundle. */
+  sessions: number
+  /** Total price in CHF. */
+  priceCHF: number
+  /**
+   * Stripe Payment Link for this package (create it in the SAME Stripe account
+   * that's connected to Cal.com → Payment Links). Empty = "Buy" stays disabled.
+   * After purchase, clients book each session via a payment-free Cal.com event.
+   */
+  paymentUrl: string
+}
+
+/**
+ * Prepaid packages. Cal.com has no native package/credit feature, so these are
+ * sold via Stripe Payment Links and redeemed against a payment-free booking;
+ * usage is tracked manually. Prices default to the straight multiple of the
+ * CHF 100/hr rate — adjust and add a discount as you like.
+ */
+export const packages: SessionPackage[] = [
+  { sessions: 5, priceCHF: 500, paymentUrl: '' },
+  { sessions: 10, priceCHF: 1000, paymentUrl: '' },
+]
+
+/** Effective per-session price within a package, rounded to the franc. */
+export function perSessionCHF(pkg: SessionPackage): number {
+  return Math.round(pkg.priceCHF / pkg.sessions)
+}
+
 /** Build a Cal.com link (`<username>/<slug>`) for an event slug. */
 export function calLink(slug: string): string {
   return `${calcom.username}/${slug}`
